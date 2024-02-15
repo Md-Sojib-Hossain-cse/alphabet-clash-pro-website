@@ -14,3 +14,9 @@ function generateRandomAlphabet(){
     const randomAlphabet = alphabet[index];
     return randomAlphabet;
 }
+
+
+function setBackgroundColorByID(elementId){
+    const alphabet = document.getElementById(elementId);
+    alphabet.classList.add('bg-orange-400');
+}

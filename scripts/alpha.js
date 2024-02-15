@@ -14,6 +14,9 @@ function continueGame(){
     //display random alphabet
     const display = document.getElementById('alphabet-display');
     display.innerText = randomAlphabet;
+
+    // set background color by ID 
+    setBackgroundColorByID(randomAlphabet);
 }
 
 // startPlay 

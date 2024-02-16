@@ -86,10 +86,11 @@
         </section>
 
         <!-- result window  -->
-        <section class="flex justify-center items-center hidden">
+        <section id="result-window" class="flex justify-center items-center hidden">
             <div class="flex flex-col justify-center items-center space-y-4 border-[1px] border-[#FFFFFF33] p-12 rounded-xl  bg-gradient-to-r from-[#FFFFFF8F] to-[#989797]">
-                <h1 class="text-5xl text-white"><span class="font-bold">Score :</span> <span>14</span></h1>
-                <button class="btn bg-white text-[ #010313] text-2xl font-semibold">Play Again</button>
+                <h1 class="text-3xl">Game Over!</h1>
+                <h1 class="text-5xl text-white"><span class="font-bold">Score :</span> <span id="result-score">14</span></h1>
+                <button onclick="startPlay()" class="btn bg-white text-[ #010313] text-2xl font-semibold">Play Again</button>
                 <p class="text-white text-xl">Practice will make you Pro</p>
             </div>
         </section>

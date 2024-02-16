@@ -32,6 +32,12 @@ function getElementTextValueById(elementId){
     return currentElement;
 }
 
+function getElementTextById(elementId){
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
+
 function setNewScore (elementId , value){
     document.getElementById(elementId).innerText = value;
 }

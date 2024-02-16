@@ -6,6 +6,9 @@ function handleKeyboardButtonPress(event){
 
     const pressedKey = event.key;
     const playerPressed = pressedKey.toLowerCase()
+    if(playerPressed === 'Escape'){
+        gameOver();
+    }
 
     if(playerPressed === expectedKey){
         console.log('player pressed the correct key : ', playerPressed);
@@ -29,8 +32,12 @@ function handleKeyboardButtonPress(event){
         console.log('You Loose a life');
 
         const currentScore = getElementTextValueById('current-life');
-        const newScore = currentScore - 1;
-        setRemainingLife('current-life' , newScore);
+        const newLife = currentScore - 1;
+        setRemainingLife('current-life' , newLife);
+
+        if(newLife === 0){
+            gameOver();
+        }
 
         //---------------------------------------------------------------------
         // const currentLifeElement = document.getElementById('current-life');
@@ -54,9 +61,37 @@ function continueGame(){
     setBackgroundColorByID(randomAlphabet);
 }
 
+//game over
+function gameOver(){
+    hideElementById('play-window');
+    showElementById('result-window');
+    //update result
+    const lastScore = getElementTextValueById('current-score');
+    setNewScore('result-score', lastScore);
+
+    //remove key bg color
+    const currentAlphabet = getElementTextById('alphabet-display');
+    removeBackgroundColorByID(currentAlphabet);
+};
+
+//play again
+function playAgain(){
+    hideElementById('result-window');
+    showElementById('start-window');
+}
+
+//reset game 
+
+
 // startPlay 
 function startPlay(){
+    //hide everything only show play window
     hideElementById('start-window');
+    hideElementById('result-window');
     showElementById('play-window');
+
+    //reset life and score 
+    setNewScore('current-score' , 0);
+    setRemainingLife('current-life' , 5);
     continueGame();
 }

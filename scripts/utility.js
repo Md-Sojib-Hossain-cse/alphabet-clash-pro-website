@@ -20,3 +20,22 @@ function setBackgroundColorByID(elementId){
     const alphabet = document.getElementById(elementId);
     alphabet.classList.add('bg-orange-400');
 }
+function removeBackgroundColorByID(elementId){
+    const alphabet = document.getElementById(elementId);
+    alphabet.classList.remove('bg-orange-400');
+}
+
+function getElementTextValueById(elementId){
+    const currentTextElement = document.getElementById(elementId);
+    const currentElementInnerText = currentTextElement.innerText;
+    const currentElement = parseInt(currentElementInnerText);
+    return currentElement;
+}
+
+function setNewScore (elementId , value){
+    document.getElementById(elementId).innerText = value;
+}
+
+function setRemainingLife(elementId , value){
+    document.getElementById(elementId).innerText = value;
+}
